@@ -4,12 +4,17 @@ from tkinter.constants import END
 
 def gen_password():
     chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@$%^&*()~`-_.,?1234567890'
-    password_entry.delete(0,END)
+
+    #Clear recently generated password
+    #password_entry.delete(0,END)
     pass_length = int(entry.get())
     password=""
+
+    # generate password and display it
     for x in range(pass_length):
         password +=choice(chars)
     password_entry.insert(0,password)
+
 root = Tk()
 root.title('Password generator')
 root.geometry('500x300')
